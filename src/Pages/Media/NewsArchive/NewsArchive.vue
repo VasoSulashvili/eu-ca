@@ -28,44 +28,82 @@
 
       <div class="mt-4">
         <h5
-          v-if="events.filter(o => o.date && o.date.split(' ')[0].split('-')[0] == activeYear && parseInt(o.date && o.date.split(' ')[0].split('-')[1]) == activeMonth).length > 0"
+          v-if="
+            events.filter(
+              o =>
+                o.date &&
+                o.date.split(' ')[0].split('-')[0] == activeYear &&
+                parseInt(o.date && o.date.split(' ')[0].split('-')[1]) ==
+                  activeMonth
+            ).length > 0
+          "
           class="section-title"
-        >{{ $t('Events') }}</h5>
+        >
+          {{ $t('Events') }}
+        </h5>
         <div v-for="item in events" :key="item.id" class="mb-4">
           <router-link :to="`/media/events/${item.id}`">
             <b-row
-              v-if="item.date && item.date.split(' ')[0].split('-')[0] == activeYear && parseInt(item.date.split(' ')[0].split('-')[1]) == activeMonth"
+              v-if="
+                item.date &&
+                  item.date.split(' ')[0].split('-')[0] == activeYear &&
+                  parseInt(item.date.split(' ')[0].split('-')[1]) == activeMonth
+              "
             >
               <b-col md="2" class="date-label">
-                <span class="date">{{item.date && item.date.split(' ')[0]}}</span>
+                <span class="date">{{
+                  item.date && item.date.split(' ')[0]
+                }}</span>
               </b-col>
               <b-col md="10">
                 <div class="title">{{ item[`title_${locale}`] }}</div>
-                <div
-                  class="text-short"
-                >{{ item[`article_${locale}`] && item[`article_${locale}`].substring(0, 200).concat('...') }}</div>
+                <div class="text-short">
+                  {{
+                    item[`article_${locale}`] &&
+                      item[`article_${locale}`].substring(0, 200).concat('...')
+                  }}
+                </div>
               </b-col>
             </b-row>
           </router-link>
         </div>
 
         <h5
-          v-if="pressReleases.filter(o =>o.date && o.date.split(' ')[0].split('-')[0] == activeYear && parseInt(o.date && o.date.split(' ')[0].split('-')[1]) == activeMonth).length > 0"
+          v-if="
+            pressReleases.filter(
+              o =>
+                o.date &&
+                o.date.split(' ')[0].split('-')[0] == activeYear &&
+                parseInt(o.date && o.date.split(' ')[0].split('-')[1]) ==
+                  activeMonth
+            ).length > 0
+          "
           class="section-title mt-3"
-        >{{ $t('Releases') }}</h5>
+        >
+          {{ $t('Releases') }}
+        </h5>
         <div v-for="item in pressReleases" :key="item.id" class="mb-4">
           <router-link :to="`/media/press-releases/${item.id}`">
             <b-row
-              v-if="item.date && item.date.split(' ')[0].split('-')[0] == activeYear && parseInt(item.date.split(' ')[0].split('-')[1]) == activeMonth"
+              v-if="
+                item.date &&
+                  item.date.split(' ')[0].split('-')[0] == activeYear &&
+                  parseInt(item.date.split(' ')[0].split('-')[1]) == activeMonth
+              "
             >
               <b-col md="2" class="date-label">
-                <span class="date">{{item.date && item.date.split(' ')[0]}}</span>
+                <span class="date">{{
+                  item.date && item.date.split(' ')[0]
+                }}</span>
               </b-col>
               <b-col md="10">
                 <div class="title">{{ item[`title_${locale}`] }}</div>
-                <div
-                  class="text-short"
-                >{{ item[`article_${locale}`] && item[`article_${locale}`].substring(0, 200).concat('...') }}</div>
+                <div class="text-short">
+                  {{
+                    item[`article_${locale}`] &&
+                      item[`article_${locale}`].substring(0, 200).concat('...')
+                  }}
+                </div>
               </b-col>
             </b-row>
           </router-link>
@@ -178,7 +216,7 @@ export default {
 }
 
 .title {
-  color: #141e3a;
+  color: #1a61a7;
   font-weight: bold;
   margin-bottom: 10px;
 }
@@ -241,7 +279,7 @@ export default {
   border-bottom: 3px solid #141e3a;
   font-weight: bold;
   padding: 10px 20px;
-  background: #0082bf;
+  background: #1eaddd;
   user-select: none;
   box-shadow: 1px 1px 3px -1px rgba(0, 0, 0, 0.3);
 }
@@ -269,8 +307,8 @@ export default {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: #0082bf;
-  color: #141e3a;
+  background: #1eaddd;
+  color: #1a61a7;
   font-weight: bold;
   font-size: 14px;
   padding: 5px 20px;

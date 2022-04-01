@@ -4,13 +4,22 @@
       <h5 class="section-title">{{ $t('News') }}</h5>
     </router-link>
     <b-row>
-      <b-col lg="4" class="mb-2" v-for="newsArticle in data" :key="newsArticle.id">
+      <b-col
+        lg="4"
+        class="mb-2"
+        v-for="newsArticle in data"
+        :key="newsArticle.id"
+      >
         <router-link :to="`media/press-releases/${newsArticle.id}`">
           <div class="card">
             <div class="card-img-container">
               <div
                 class="img-100"
-                v-bind:style="{'background-image': newsArticle.image ? `url(${base_url}${newsArticle.image.url})` : `url(${noimage})`}"
+                v-bind:style="{
+                  'background-image': newsArticle.image
+                    ? `url(${base_url}${newsArticle.image.url})`
+                    : `url(${noimage})`,
+                }"
               ></div>
             </div>
             <div class="card-body">{{ newsArticle[`title_${locale}`] }}</div>
@@ -18,14 +27,17 @@
               <b-button
                 class="btn-read-more web"
                 @click="expandArticle(newsArticle.id)"
-              >{{ $t("ReadMore") }}...</b-button>
+                >{{ $t('ReadMore') }}...</b-button
+              >
             </div>
           </div>
         </router-link>
       </b-col>
     </b-row>
     <div style="width: 100%; text-align: right">
-      <router-link class="btn-read-more" to="/media/press-releases">{{ $t("ViewAll") }}...</router-link>
+      <router-link class="btn-read-more" to="/media/press-releases"
+        >{{ $t('ViewAll') }}...</router-link
+      >
     </div>
   </div>
 </template>
@@ -98,7 +110,7 @@ export default {
 .card-title {
   margin: 8px;
   font-size: 18px;
-  color: #1f345f;
+  color: #2a3f70;
 }
 
 .card-img-container {
@@ -115,6 +127,6 @@ export default {
   padding: 8px;
   font-size: 14px;
   font-weight: bold;
-  color: #141e3a;
+  color: #2a3f70;
 }
 </style>

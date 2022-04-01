@@ -15,12 +15,12 @@
       >
         <font-awesome-icon class="icon-bars mr-1" :icon="['fas', 'bars']" />
       </div>
-      <div style="margin-top: 60px">
+      <div style="margin-top: 60px; background-color: #2A3F70">
         <div v-for="route in routes" :key="route.name">
           <b-dropdown
             class="dropdown-m"
             :text="$t(route.title)"
-            v-if="route.children.length  && !route.hidden"
+            v-if="route.children.length && !route.hidden"
           >
             <b-dropdown-item
               class="dropdown-override"
@@ -29,42 +29,75 @@
               :to="item.path"
               v-if="!item.hidden"
             >
-              <span @click="toggleSidebar()" v-if="!item.hidden">{{ $t(item.title) }}</span>
+              <span @click="toggleSidebar()" v-if="!item.hidden">{{
+                $t(item.title)
+              }}</span>
             </b-dropdown-item>
           </b-dropdown>
           <b-button
             @click="navigate(route.path)"
             class="dropdown-m w-100 no-children"
-            v-if="!route.children.length  && !route.hidden"
-          >{{$t(route.title)}}</b-button>
+            v-if="!route.children.length && !route.hidden"
+            >{{ $t(route.title) }}</b-button
+          >
         </div>
       </div>
-      <b-button @click="navigate('/links')" class="dropdown-m w-100 no-children">{{ $t('Links') }}</b-button>
+      <b-button
+        @click="navigate('/links')"
+        class="dropdown-m w-100 no-children"
+        >{{ $t('Links') }}</b-button
+      >
       <b-button
         @click="navigate('/sitemap')"
         class="dropdown-m w-100 no-children"
-      >{{ $t('Sitemap') }}</b-button>
+        >{{ $t('Sitemap') }}</b-button
+      >
       <language-component />
     </div>
 
-    <b-navbar toggleable="lg" type="dark" variant="dark" :sticky="true" class="navbar">
+    <b-navbar
+      toggleable="lg"
+      type="dark"
+      variant="dark"
+      :sticky="true"
+      class="navbar"
+    >
       <b-container style="height: 3em;">
         <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
         <b-collapse id="nav-collapse" is-nav>
           <b-navbar-nav>
-            <div v-for="route in routes" :key="route.name" class="main-nav-item">
-              <b-nav-item :text="$t(route.title)" v-if="!route.children.length && !route.hidden">
+            <div
+              v-for="route in routes"
+              :key="route.name"
+              class="main-nav-item"
+            >
+              <b-nav-item
+                :text="$t(route.title)"
+                v-if="!route.children.length && !route.hidden"
+              >
                 <router-link :to="route.path">
                   <span
-                    :class="activePath === route.path ? 'navbar-title active' : 'navbar-title'"
-                  >{{ $t(route.title) }}</span>
+                    :class="
+                      activePath === route.path
+                        ? 'navbar-title active'
+                        : 'navbar-title'
+                    "
+                    >{{ $t(route.title) }}</span
+                  >
                 </router-link>
               </b-nav-item>
-              <b-nav-item-dropdown v-if="route.children.length && !route.hidden">
+              <b-nav-item-dropdown
+                v-if="route.children.length && !route.hidden"
+              >
                 <template slot="button-content">
                   <span
-                    :class="activePath === route.path ? 'navbar-title active' : 'navbar-title'"
-                  >{{ $t(route.title) }}</span>
+                    :class="
+                      activePath === route.path
+                        ? 'navbar-title active'
+                        : 'navbar-title'
+                    "
+                    >{{ $t(route.title) }}</span
+                  >
                 </template>
                 <b-dropdown-item
                   class="dropdown-override"
@@ -137,7 +170,7 @@ export default {
 
 <style scoped lang="postcss">
 .navbar {
-  background: #141e3a !important;
+  background: #2a3f70 !important;
   /* height: 3em; */
 }
 
@@ -162,7 +195,7 @@ export default {
 
 @media screen and (max-width: 992px) {
   .navbar-collapse.collapse.show {
-    background-color: #081227;
+    background-color: #2a3f70;
     height: unset;
     width: 100%;
     padding: 0 20px;
@@ -171,7 +204,7 @@ export default {
 
 @media screen and (max-width: 992px) {
   .navbar-collapse.collapse.show {
-    background-color: #081227;
+    background-color: #2a3f70;
     height: unset;
     width: 100%;
     padding: 0 20px;

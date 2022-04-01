@@ -4,8 +4,16 @@
       <b-input-group class="input-search" size="sm" style="width: 90%;">
         <b-form-input v-model="searchQuery" placeholder="Search"></b-form-input>
         <b-input-group-append>
-          <b-button :disabled="!searchQuery" @click="search()" class="ml-0" variant="info">
-            <font-awesome-icon class="icon-search mr-1" :icon="['fas', 'search']" />
+          <b-button
+            :disabled="!searchQuery"
+            @click="search()"
+            class="ml-0"
+            variant="info"
+          >
+            <font-awesome-icon
+              class="icon-search mr-1"
+              :icon="['fas', 'search']"
+            />
           </b-button>
         </b-input-group-append>
       </b-input-group>
@@ -93,7 +101,7 @@ export default {
 .icon-link,
 .icon-sitemap,
 #print-button {
-  color: #141e3a;
+  color: #2a3f70;
 }
 
 #print-button {
@@ -104,18 +112,18 @@ export default {
 
 #print-button:active,
 #print-button:focus {
-  color: #0a0a2d;
+  color: #2a3f70;
   background: none;
   border: none !important;
   box-shadow: none;
 }
 
 .links {
-  color: #0a0a2d;
+  color: #2a3f70;
 }
 
 .links:hover {
-  color: #db2323;
+  color: #1eaddd;
 }
 .input-search {
   margin-left: 20px;
@@ -126,7 +134,7 @@ export default {
   border-radius: 0;
 }
 .input-search > .input-group-append > .btn {
-  background: #db2323;
-  border-color: #db2323;
+  background: #1eaddd !important;
+  border-color: #1eaddd !important;
 }
 </style>

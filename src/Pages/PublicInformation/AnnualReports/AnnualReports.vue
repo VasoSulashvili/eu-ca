@@ -8,13 +8,25 @@
           <div class="card-img-container">
             <a
               v-if="report[`doc_${locale}`]"
-              :href="report[`doc_${locale}`] && report[`doc_${locale}`] && API_BASE_URL + '/uploads/' + report[`doc_${locale}`].hash + report[`doc_${locale}`].ext"
+              :href="
+                report[`doc_${locale}`] &&
+                  report[`doc_${locale}`] &&
+                  API_BASE_URL +
+                    '/uploads/' +
+                    report[`doc_${locale}`].hash +
+                    report[`doc_${locale}`].ext
+              "
               target="_blank"
             >
               <!-- <img class="card-img-top rounded-0" :src="report.image ? `${API_BASE_URL}/uploads/${report.image.hash}${report.image.ext}` : icon" alt="document"> -->
               <div
                 class="img-100"
-                v-bind:style="{'background-image': report.image ? `url(${API_BASE_URL}/uploads/${report.image && report.image.hash}${report.image.ext})` : `url(${noimage})`}"
+                v-bind:style="{
+                  'background-image': report.image
+                    ? `url(${API_BASE_URL}/uploads/${report.image &&
+                        report.image.hash}${report.image.ext})`
+                    : `url(${noimage})`,
+                }"
               ></div>
             </a>
             <!-- <a v-else><img class="card-img-top rounded-0" src="@/assets/doc-icon.svg" alt="document"></a> -->
@@ -29,13 +41,25 @@
         <div class="card-img-container">
           <a
             v-if="report[`doc_${locale}`]"
-            :href="report[`doc_${locale}`] && report[`doc_${locale}`] && API_BASE_URL + '/uploads/' + report[`doc_${locale}`].hash + report[`doc_${locale}`].ext"
+            :href="
+              report[`doc_${locale}`] &&
+                report[`doc_${locale}`] &&
+                API_BASE_URL +
+                  '/uploads/' +
+                  report[`doc_${locale}`].hash +
+                  report[`doc_${locale}`].ext
+            "
             target="_blank"
           >
             <!-- <img class="card-img-top rounded-0" :src="report.image ? `${API_BASE_URL}/uploads/${report.image.hash}${report.image.ext}` : icon" alt="document"> -->
             <div
               class="img-100"
-              v-bind:style="{'background-image': report.image ? `url(${API_BASE_URL}/uploads/${report.image && report.image.hash}${report.image.ext})` : `url(${noimage})`}"
+              v-bind:style="{
+                'background-image': report.image
+                  ? `url(${API_BASE_URL}/uploads/${report.image &&
+                      report.image.hash}${report.image.ext})`
+                  : `url(${noimage})`,
+              }"
             ></div>
           </a>
           <!-- <a v-else><img class="card-img-top rounded-0" src="@/assets/doc-icon.svg" alt="document"></a> -->
@@ -102,7 +126,7 @@ export default {
 
 .card-year {
   padding: 8px;
-  color: #db2323;
+  color: #1eaddd;
   font-size: 19px;
   text-align: center;
 }

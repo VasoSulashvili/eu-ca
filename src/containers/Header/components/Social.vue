@@ -13,12 +13,12 @@
       </li>
       <li>
         <a
-          class="btn-social instagram"
-          href="https://www.instagram.com/georgian_competition_agency/"
-          title="Instagram"
+          class="btn-social twitter"
+          href="https://twitter.com/gnc_agency/"
+          title="Twitter"
           target="_blank"
         >
-          <font-awesome-icon class="fa" :icon="['fab', 'instagram']" />
+          <font-awesome-icon class="fa" :icon="['fab', 'twitter']" />
         </a>
       </li>
       <li>

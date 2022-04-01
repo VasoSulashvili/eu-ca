@@ -4,7 +4,16 @@
     <server-error v-if="errored" />
     <div v-if="!errored && !loading">
       <h4 style="max-width: 80%">{{ data[`title_${locale}`] }}</h4>
-      <h5>{{ data.date && data.date.split(' ')[0].split('-').reverse().join('.') }}</h5>
+      <h5>
+        {{
+          data.date &&
+            data.date
+              .split(' ')[0]
+              .split('-')
+              .reverse()
+              .join('.')
+        }}
+      </h5>
       <!-- <vue-pure-lightbox
         v-if="images.length"
         :thumbnail="images[0]"
@@ -13,7 +22,10 @@
       <div v-if="images.length" class="image-count">
         <div class="p-3">{{ images.length }} {{ $t('ItemsInGallery') }}</div>
       </div>
-      <vue-markdown class="mt-3" :source="data[`article_${locale}`]"></vue-markdown>
+      <vue-markdown
+        class="mt-3"
+        :source="data[`article_${locale}`]"
+      ></vue-markdown>
       <b-row>
         <b-col
           cols="3"
@@ -22,7 +34,11 @@
           v-for="image in images"
           :key="image"
         >
-          <vue-pure-lightbox style="width: 100%" :thumbnail="image" :images="[image]"></vue-pure-lightbox>
+          <vue-pure-lightbox
+            style="width: 100%"
+            :thumbnail="image"
+            :images="[image]"
+          ></vue-pure-lightbox>
         </b-col>
       </b-row>
       <div class="mt-3" v-if="data.video">
@@ -116,7 +132,7 @@ export default {
   /* background: #b74f29; */
   width: 100%;
   height: 100%;
-  color: #b74f29;
+  color: #1eaddd;
   font-weight: bold;
   font-size: 18px;
   position: relative;
@@ -132,7 +148,7 @@ export default {
   padding: 30px;
 }
 .date-wrapper > div {
-  border-left: 3px solid #141e3a;
+  border-left: 3px solid #1a61a7;
   display: flex;
   justify-items: center;
   flex-direction: column;

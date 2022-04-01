@@ -11,7 +11,12 @@
                 <b-card-body :title="event[`title_${locale}`]">
                   <b-card-text>
                     <vue-markdown
-                      :source="event[`article_${locale}`] && event[`article_${locale}`].substring(0, 140).concat('...')"
+                      :source="
+                        event[`article_${locale}`] &&
+                          event[`article_${locale}`]
+                            .substring(0, 140)
+                            .concat('...')
+                      "
                     ></vue-markdown>
                   </b-card-text>
                 </b-card-body>
@@ -19,7 +24,16 @@
               <b-col md="2">
                 <div class="date-container">
                   <div class="date-wrapper">
-                    <div>{{ event.date && event.date.split(' ')[0].split('-').reverse().join('.') }}</div>
+                    <div>
+                      {{
+                        event.date &&
+                          event.date
+                            .split(' ')[0]
+                            .split('-')
+                            .reverse()
+                            .join('.')
+                      }}
+                    </div>
                   </div>
                 </div>
               </b-col>
@@ -61,7 +75,7 @@ export default {
   },
   mounted() {
     this.$http
-      .get(ANNOUNCEMENTS_URL+'?_sort=id:desc')
+      .get(ANNOUNCEMENTS_URL + '?_sort=id:desc')
       .then(response => {
         this.data = response.data.slice(0, 4);
       })
@@ -92,7 +106,7 @@ export default {
   /* background: #b74f29; */
   width: 100%;
   height: 100%;
-  color: #b74f29;
+  color: #1eaddd;
   font-weight: bold;
   font-size: 18px;
   position: relative;
@@ -108,7 +122,7 @@ export default {
   padding: 30px;
 }
 .date-wrapper > div {
-  border-left: 3px solid #141e3a;
+  border-left: 3px solid #1a61a7;
   display: flex;
   justify-items: center;
   flex-direction: column;

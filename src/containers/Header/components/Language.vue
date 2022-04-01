@@ -28,11 +28,27 @@
     <div>
       <div style="position: absolute" class="w-100">
         <social-component class="ml-2" />
-        <b-input-group class="mt-3 ml-2 input-search" size="sm" style="max-width: 200px">
-          <b-form-input v-model="searchQuery" placeholder="Search" v-on:keydown.enter="search"></b-form-input>
+        <b-input-group
+          class="mt-3 ml-2 input-search"
+          size="sm"
+          style="max-width: 200px"
+        >
+          <b-form-input
+            v-model="searchQuery"
+            placeholder="Search"
+            v-on:keydown.enter="search"
+          ></b-form-input>
           <b-input-group-append>
-            <b-button :disabled="!searchQuery" @click="search()" class="ml-0" variant="info">
-              <font-awesome-icon class="icon-search mr-1" :icon="['fas', 'search']" />
+            <b-button
+              :disabled="!searchQuery"
+              @click="search()"
+              class="ml-0"
+              variant="info"
+            >
+              <font-awesome-icon
+                class="icon-search mr-1"
+                :icon="['fas', 'search']"
+              />
             </b-button>
           </b-input-group-append>
         </b-input-group>
@@ -121,11 +137,11 @@ export default {
 }
 
 .links {
-  color: #0a0a2d;
+  color: #2a3f70;
 }
 
 .links:hover {
-  color: #db2323;
+  color: #1eaddd;
 }
 .input-search {
 }
@@ -134,7 +150,7 @@ export default {
   border-radius: 0;
 }
 .input-search > .input-group-append > .btn {
-  background: #db2323;
-  border-color: #db2323;
+  background: #1eaddd;
+  border-color: #1eaddd;
 }
 </style>

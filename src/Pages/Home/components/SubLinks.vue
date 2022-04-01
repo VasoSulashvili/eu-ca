@@ -1,16 +1,21 @@
 <template>
   <div class="projects">
-      <a href="http://www.procurement.gov.ge/Davebi.aspx" target="_blank">
-        <h5 class="section-title" style="margin-legt: 0; padding-left: 0; position: relative; display: flex; align-items: center; color: #fff; font-weight: normal; font-family: 'BPG Glaho WEB Caps'; border-color: #ce653e">
-          <img style="width: 100%" :src="backgroundImage" />
-          <!-- <font-awesome-icon class="fa" :icon="['fab', 'file']" /> -->
+    <a href="http://www.procurement.gov.ge/Davebi.aspx" target="_blank">
+      <h5
+        class="section-title"
+        style="margin-legt: 0; padding-left: 0; position: relative; display: flex; align-items: center; color: #fff; font-weight: normal; font-family: 'BPG Glaho WEB Caps'; border-color: #ce653e"
+      >
+        <img style="width: 100%" :src="backgroundImage" />
+        <!-- <font-awesome-icon class="fa" :icon="['fab', 'file']" /> -->
 
-          <div style="margin-left: 8px; position: absolute; font-size: 18px; display: flex; align-items: center">
-            <img style="width: 42px" :src="procurementLogo" />
-            <div style="margin-left: 6px">{{ $t('ProcurementAgency') }}</div>
-          </div>
-        </h5>
-      </a>
+        <div
+          style="margin-left: 8px; position: absolute; font-size: 18px; display: flex; align-items: center"
+        >
+          <img style="width: 42px" :src="procurementLogo" />
+          <div style="margin-left: 6px">{{ $t('ProcurementAgency') }}</div>
+        </div>
+      </h5>
+    </a>
     <!-- <a :href="data && data.Link" target="_blank">
       <img
         style="width: 100%; object-fit: cover"
@@ -38,7 +43,7 @@ export default {
       errored: false,
       API_BASE_URL: API_BASE_URL,
       backgroundImage,
-      procurementLogo
+      procurementLogo,
     };
   },
   computed: {
@@ -61,5 +66,4 @@ export default {
 };
 </script>
 
-<style lang='postcss' scoped>
-</style>
+<style lang="postcss" scoped></style>

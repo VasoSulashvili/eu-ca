@@ -7,7 +7,7 @@
       :per-page="1"
       :loop="true"
       :pagination="false"
-      paginationActiveColor="#b74f29"
+      paginationActiveColor="#1eaddd"
       paginationPosition="bottom-overlay"
       :autoplayTimeout="4000"
     >
@@ -15,7 +15,9 @@
         <div
           v-if="item.image"
           class="slide-image"
-          v-bind:style="{ 'background-image': 'url(' + base_url + item.image.url + ')' }"
+          v-bind:style="{
+            'background-image': 'url(' + base_url + item.image.url + ')',
+          }"
         >
           <b-container style="height:100%">
             <div style="position: relative; width: 100%; height:100%;">
@@ -75,7 +77,7 @@ export default {
 };
 </script>
 
-<style lang='postcss' scoped>
+<style lang="postcss" scoped>
 .carousel-wrapper {
   /* height: calc( vh - 192px ); */
   width: 100%;
@@ -96,7 +98,7 @@ export default {
 }
 
 #slider-footer {
-  background: #141e3a !important;
+  background: #2a3f70 !important;
   height: 3em;
 }
 

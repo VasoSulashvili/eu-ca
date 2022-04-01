@@ -3,7 +3,10 @@
     <header-component />
     <navbar-component />
     <div class="main">
-      <b-container id="breadcrumb-container" style="display: flex; justify-content: space-between">
+      <b-container
+        id="breadcrumb-container"
+        style="display: flex; justify-content: space-between"
+      >
         <b-breadcrumb
           v-if="
             this.$router.currentRoute.name !== 'home' &&
@@ -47,7 +50,14 @@
       <router-view></router-view>
     </div>
     <footer-component />
-    <go-top :size="55" :z-index="10000" bg-color="#DB2323cc" :radius="0" :right="40" :bottom="40"></go-top>
+    <go-top
+      :size="55"
+      :z-index="10000"
+      bg-color="#1eaddd"
+      :radius="0"
+      :right="40"
+      :bottom="40"
+    ></go-top>
   </div>
 </template>
 
@@ -126,7 +136,7 @@ export default {
 
 .dropdown-item.active,
 .dropdown-item:active {
-  background-color: #141e3a !important;
+  background-color: #2a3f70 !important;
   text-decoration: none;
   color: #fff !important;
 }
@@ -137,16 +147,35 @@ export default {
 }
 
 .breadcrumb-item:nth-child(1) a {
-  color: #db2323 !important;
+  color: #1eaddd !important;
 }
 
 .breadcrumb-item a {
-  color: #6c757d;
+  color: #2a3f70 !important;
 }
 
 ol.breadcrumb {
   border-radius: 0 !important;
   /* background-color: rgba(0, 0, 0, 0.03); */
   background-color: rgba(0, 0, 0, 0);
+}
+
+/* added global style */
+.doc-button {
+  background: transparent;
+  color: #1eaddd !important;
+  border: none;
+  padding: 0;
+}
+
+.doc-button:hover {
+  color: #1eaddd !important;
+}
+
+.card-header > a:active,
+.card-header > a:focus,
+.card-header > a:hover {
+  color: #1eaddd !important;
+  transition: 0.3s ease all;
 }
 </style>

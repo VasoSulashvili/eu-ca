@@ -4,7 +4,11 @@
     <b-container class="web" style="margin-bottom: 20px">
       <div class="decisions-cards">
         <b-row>
-          <b-col v-for="route in decisionsRoutes" :key="route.name" class="col decision-card">
+          <b-col
+            v-for="route in decisionsRoutes"
+            :key="route.name"
+            class="col decision-card"
+          >
             <router-link :to="route.path">
               <div class="card-icon">
                 <div></div>
@@ -20,7 +24,11 @@
     </b-container>
     <b-container class="mobile" style="margin-bottom: 20px">
       <div class="decisions-cards">
-        <div v-for="route in decisionsRoutes" :key="route.name" class="col decision-card">
+        <div
+          v-for="route in decisionsRoutes"
+          :key="route.name"
+          class="col decision-card"
+        >
           <router-link :to="route.path">
             <div style="position: relative; dispay: flex">
               <div class="card-icon"></div>
@@ -66,7 +74,7 @@ export default {
 
 <style lang="postcss" scoped>
 #slider-footer {
-  background: #141e3a !important;
+  background: #2a3f70 !important;
   height: 6em;
 }
 
@@ -88,7 +96,7 @@ export default {
 }
 
 .decision-card:hover {
-  color: #db2323;
+  color: #1eaddd;
 }
 
 .card-icon {
@@ -100,7 +108,7 @@ export default {
   background-position: center;
   width: 70px;
   height: 70px;
-  background-color: #48b0d6;
+  background-color: #b74f29;
   margin-bottom: 20px;
   filter: invert(100%);
   margin-bottom: 10px;
@@ -112,13 +120,13 @@ export default {
 }
 
 .decision-card:hover > a > .card-icon-title {
-  color: #b74f29;
+  color: #1eaddd;
   transition: 0.3s ease all;
 }
 
 .card-icon-title {
   font-size: 14px;
-  color: #141e3a;
+  color: #2a3f70;
   line-height: 18px;
   position: relative;
   transition: 0.3s ease all;
